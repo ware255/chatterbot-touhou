@@ -240,9 +240,6 @@ int main(int argc, char** argv)//main関数
         else if (data == Y) {
             myon();         //myon関数を呼び出す。
         }
-        ofstream letter("汚き手紙☆.txt");
-        letter << "東方Projectならぬ255-Project\n\n255-Projectとは、おふざけで作ったプロジェクトです。まぁ、目的はないかなｗ\nでも255っていうくらいだからコンソールアプリケーションしかつくらないかも？";
-        letter.close();
         cout << "誰風にしますか？" << "数字を選択してください。\n" << endl;
         cout << "1 - 博麗霊夢風" << endl;
         cout << "2 - 霧雨魔理沙風" << endl;
