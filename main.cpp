@@ -8,6 +8,7 @@
 
 */
 #include <iostream>//標準ライブラリ
+#include <iomanip>//cinの脆弱性をなくすために必要
 #include <fstream>//ファイル操作の時に必要
 #include <random>//乱数を使用する時に必要
 #include <string>
@@ -50,14 +51,16 @@ nyuroku1:
     int yuti;
     char word[256];
     cout << ":";
-    cin >> word;
+    cin >> setw(256) >> word;
     if (word == r1) {
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "おはよ" << endl;
+                cin.ignore(256, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
+                cin.ignore(256, '\n');
             }
         }
         goto nyuroku1;
@@ -66,9 +69,11 @@ nyuroku1:
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんにはー" << endl;
+                cin.ignore(256, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
+                cin.ignore(256, '\n');
             }
         }
         goto nyuroku1;
@@ -77,9 +82,11 @@ nyuroku1:
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんばんはー" << endl;
+                cin.ignore(256, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
+                cin.ignore(256, '\n');
             }
         }
         goto nyuroku1;
@@ -89,7 +96,7 @@ nyuroku1:
     }
     else if (cin.fail()) {
         cin.clear();
-        cin.ignore(1024, '\n');
+        cin.ignore(256, '\n');
         exit(0);
     }
     return 0;
@@ -123,17 +130,20 @@ nyuroku2:
     string quit1 = "ばいばい";
     char word[256];
     cout << ":";
-    cin >> word;
+    cin >> setw(256) >> word;
     if (word == m1) {
         cout << "やぁ、おはよう！" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku2;
     }
     else if (word == m2) {
         cout << "こんにちはなんだぜ!" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku2;
     }
     else if (word == m3) {
         cout << "こんばんはなんだぜ!" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku2;
     }
     else if (word == quit | word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
@@ -141,7 +151,7 @@ nyuroku2:
     }
     else {
         cin.clear();
-        cin.ignore(1024, '\n');
+        cin.ignore(256, '\n');
         exit(0);
     }
     return 0;
@@ -176,17 +186,20 @@ nyuroku3:
     char word[256];
     i = rand() % 2 + 1;
     cout << ":";
-    cin >> word;
+    cin >> setw(256) >> word;
     if (word == y1) {
         cout << "おはみょん！" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku3;
     }
     else if (word == y2) {
         cout << "こんにちみょん！" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku3;
     }
     else if (word == y3) {
         cout << "こんばんみょん！" << endl;
+        cin.ignore(256, '\n');
         goto nyuroku3;
     }
     else if (word == quit|word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
@@ -194,7 +207,7 @@ nyuroku3:
     }
     else {
         cin.clear();
-        cin.ignore(1024, '\n');
+        cin.ignore(256, '\n');
         exit(-1);               //失敗したので-1
     }
     return 0;
@@ -222,7 +235,6 @@ int myon()//自作関数
 int main(int argc, char** argv)//main関数
 {
     ::SetConsoleTitle(TEXT("人工無能(東方)"));
-    char stop;
     if (argc <= 1) {
         int namber;
         string R = "1";// くら
@@ -250,6 +262,7 @@ int main(int argc, char** argv)//main関数
         if (namber == 1) {
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "私、霊夢って言うの。" << endl;
+            cin.ignore(1024, '\n');
             {
                 ofstream save("save");  //saveというファイルを作成
                 if (!save) {    // !(エクスクラメーションマーク)を付けることで、
@@ -257,12 +270,12 @@ int main(int argc, char** argv)//main関数
                 }
                 save << "1";    // saveというファイルに1を出力
             }
-            cin.get(stop);      //getchar()に似てる文。
-            cin.ignore(1024, '\n');
+            cin.get();      //getchar()に似てる文。
         }
         else if (namber == 2) {
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "魔理沙だぜ！" << endl;
+            cin.ignore(1024, '\n');
             {
                 ofstream save("save");  //saveというファイルを作成
                 if (!save) {    // !(エクスクラメーションマーク)を付けることで、
@@ -270,12 +283,12 @@ int main(int argc, char** argv)//main関数
                 }
                 save << "2";    // saveというファイルに2を出力
             }
-            cin.get(stop);      //getchar()に似てる文。
-            cin.ignore(1024, '\n');
+            cin.get();      //getchar()に似てる文。
         }
         else if (namber == 3) {
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "みょん！" << endl;
+            cin.ignore(1024, '\n');
             {
                 ofstream save("save");  //saveというファイルを作成
                 if (!save) {    // !(エクスクラメーションマーク)を付けることで、
@@ -283,8 +296,7 @@ int main(int argc, char** argv)//main関数
                 }
                 save << "3";    // saveというファイルに3を出力
             }
-            cin.get(stop);      //getchar()に似てる文。
-            cin.ignore(1024, '\n');
+            cin.get();      //getchar()に似てる文。
         }
         else if (!cin.bad()) {
             cin.clear();    //clear関数を呼び出していないことに注意。別の意味です。
