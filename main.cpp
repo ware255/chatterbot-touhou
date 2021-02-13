@@ -56,11 +56,11 @@ nyuroku1:
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "おはよ" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
         }
         goto nyuroku1;
@@ -69,11 +69,11 @@ nyuroku1:
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんにはー" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
         }
         goto nyuroku1;
@@ -82,11 +82,11 @@ nyuroku1:
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんばんはー" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
             else if (i == 2) {
                 cout << "。。。" << endl;
-                cin.ignore(256, '\n');
+                cin.ignore(4024, '\n');
             }
         }
         goto nyuroku1;
@@ -96,7 +96,7 @@ nyuroku1:
     }
     else if (cin.fail()) {
         cin.clear();
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         exit(0);
     }
     return 0;
@@ -133,17 +133,17 @@ nyuroku2:
     cin >> setw(256) >> word;
     if (word == m1) {
         cout << "やぁ、おはよう！" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku2;
     }
     else if (word == m2) {
         cout << "こんにちはなんだぜ!" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku2;
     }
     else if (word == m3) {
         cout << "こんばんはなんだぜ!" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku2;
     }
     else if (word == quit | word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
@@ -151,7 +151,7 @@ nyuroku2:
     }
     else {
         cin.clear();
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         exit(0);
     }
     return 0;
@@ -189,17 +189,17 @@ nyuroku3:
     cin >> setw(256) >> word;
     if (word == y1) {
         cout << "おはみょん！" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku3;
     }
     else if (word == y2) {
         cout << "こんにちみょん！" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku3;
     }
     else if (word == y3) {
         cout << "こんばんみょん！" << endl;
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         goto nyuroku3;
     }
     else if (word == quit|word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
@@ -207,7 +207,7 @@ nyuroku3:
     }
     else {
         cin.clear();
-        cin.ignore(256, '\n');
+        cin.ignore(4024, '\n');
         exit(-1);               //失敗したので-1
     }
     return 0;
