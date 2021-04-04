@@ -9,5 +9,8 @@
 ```
 以上のことを踏まえてからコンパイルして実行してください。※文字コードをShift-JISにすること。
 ```
-g++ main.cpp -o chatterbot-touhou
+g++ main.cpp -o chatterbot-touhou -Wall
 ```
+or
+```
+clang++ main.cpp -o chatterbot-touhou -Wall
