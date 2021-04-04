@@ -42,17 +42,12 @@ void clear()//自作関数 clearする時に使う。
 int hakurei()//自作関数
 {
 nyuroku1:
-    string r1 = "おはよう";
-    string r2 = "こんにちは";
-    string r3 = "こんばんは";
-    string quit = "exit";
-    string quit1 = "ばいばい";
     int i = rand() % 2 + 1;
     int yuti;
     char word[256];
     cout << ":";
     cin >> setw(256) >> word;
-    if (word == r1) {
+    if (word == "おはよう") {
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "おはよ" << endl;
@@ -65,7 +60,7 @@ nyuroku1:
         }
         goto nyuroku1;
     }
-    else if (word == r2) {
+    else if (word == "こんにちは") {
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんにはー" << endl;
@@ -78,7 +73,7 @@ nyuroku1:
         }
         goto nyuroku1;
     }
-    else if (word == r3) {
+    else if (word == "こんばんは") {
         for (yuti = 0; yuti < 1; ++yuti) {
             if (i == 1) {
                 cout << "こんばんはー" << endl;
@@ -91,7 +86,7 @@ nyuroku1:
         }
         goto nyuroku1;
     }
-    else if (word == quit | word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+    else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
         exit(0);
     }
     else if (cin.fail()) {
@@ -123,30 +118,25 @@ int reimu()//自作関数
 int kirisame()//自作関数
 {
 nyuroku2:
-    string m1 = "おはよう";
-    string m2 = "こんにちは";
-    string m3 = "こんばんは";
-    string quit = "exit";
-    string quit1 = "ばいばい";
     char word[256];
     cout << ":";
     cin >> setw(256) >> word;
-    if (word == m1) {
+    if (word == "おはよう") {
         cout << "やぁ、おはよう！" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku2;
     }
-    else if (word == m2) {
+    else if (word == "こんにちは") {
         cout << "こんにちはなんだぜ!" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku2;
     }
-    else if (word == m3) {
+    else if (word == "こんばんは") {
         cout << "こんばんはなんだぜ!" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku2;
     }
-    else if (word == quit | word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+    else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
         exit(0);
     }
     else {
@@ -178,31 +168,26 @@ int marisa()//自作関数
 int youmu()//自作関数
 {
 nyuroku3:
-    string y1 = "おはよう";
-    string y2 = "こんにちは";
-    string y3 = "こんばんは";
-    string quit = "exit";
-    string quit1 = "ばいばい";
     char word[256];
     i = rand() % 2 + 1;
     cout << ":";
     cin >> setw(256) >> word;
-    if (word == y1) {
+    if (word == "おはよう") {
         cout << "おはみょん！" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku3;
     }
-    else if (word == y2) {
+    else if (word == "こんにちは") {
         cout << "こんにちみょん！" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku3;
     }
-    else if (word == y3) {
+    else if (word == "こんばんは") {
         cout << "こんばんみょん！" << endl;
         cin.ignore(4024, '\n');
         goto nyuroku3;
     }
-    else if (word == quit|word == quit1) { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+    else if (word == "exit" ||word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
         exit(0);
     }
     else {
