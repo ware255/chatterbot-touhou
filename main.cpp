@@ -18,6 +18,7 @@ using std::cout;
 using std::endl;
 
 int i;
+std::string word;
 
 inline void clear()//自作関数 clearする時に使う。
 {
@@ -36,54 +37,68 @@ inline void clear()//自作関数 clearする時に使う。
 int hakurei()//自作関数
 {
     std::srand((unsigned)time(NULL));
-nyuroku1:
-    int i = rand() % 2 + 1;
-    int yuti;
-    char word[256];
-    std::cout << ":";
-    std::cin >> std::setw(256) >> word;
-    if (word == "おはよう") {
-        for (yuti = 0; yuti < 1; ++yuti) {
-            if (i == 1) {
-                cout << "おはよ" << endl;
-                std::cin.ignore(268435456, '\n');
-            }
-            else if (i == 2) {
-                cout << "。。。" << endl;
-                std::cin.ignore(268435456, '\n');
-            }
-        }
-        goto nyuroku1;
-    }
-    else if (word == "こんにちは") {
-        for (yuti = 0; yuti < 1; ++yuti) {
-            if (i == 1) {
-                cout << "こんにはー" << endl;
-            }
-            else if (i == 2) {
-                cout << "。。。" << endl;
+    while (true) {
+        int i = rand() % 3 + 1;
+        int yuti;
+        std::cout << ":";
+        //std::cin >> std::setw(256) >> word;
+        std::getline(std::cin, word);
+        if (word == "おはよう") {
+            for (yuti = 0; yuti < 1; ++yuti) {
+                switch (i) {
+                case 1:
+                    cout << "おはよ" << endl;
+                    //std::cin.ignore(268435456, '\n');
+                    break;
+                case 2:
+                    cout << "。。。" << endl;
+                    break;
+                case 3:
+                    cout << "そんなこと行ってる暇があったら掃除でもしたら？" << endl;
+                    break;
+                default:
+                    break;
+                }
             }
         }
-        goto nyuroku1;
-    }
-    else if (word == "こんばんは") {
-        for (yuti = 0; yuti < 1; ++yuti) {
-            if (i == 1) {
-                cout << "こんばんはー" << endl;
-            }
-            else if (i == 2) {
-                cout << "。。。" << endl;
+        else if (word == "こんにちは") {
+            for (yuti = 0; yuti < 1; ++yuti) {
+                switch (i) {
+                case 1:
+                    cout << "こんにちはー" << endl;
+                    break;
+                case 2:
+                    cout << "。。。" << endl;
+                    break;
+                default:
+                    break;
+                }
             }
         }
-        goto nyuroku1;
-    }
-    else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
-        exit(0);
-    }
-    else if (std::cin.fail()) {
-        std::cin.clear();
-        std::cin.ignore(268435456, '\n');
-        exit(0);
+        else if (word == "こんばんは") {
+            for (yuti = 0; yuti < 1; ++yuti) {
+                switch (i) {
+                case 1:
+                    cout << "こんばんはー" << endl;
+                    break;
+                case 2:
+                    cout << "。。。" << endl;
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+        else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            exit(0);
+        }
+        else if (word.size() > 0) {
+            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
+            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            std::cin.clear();
+            std::cin.ignore(268435456, '\n');
+            exit(0);
+        }
     }
     return 0;
 }
@@ -108,32 +123,29 @@ int reimu()//自作関数
 
 int kirisame()//自作関数
 {
-nyuroku2:
-    char word[256];
-    cout << ":";
-    std::cin >> std::setw(256) >> word;
-    if (word == "おはよう") {
-        cout << "やぁ、おはよう！" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku2;
-    }
-    else if (word == "こんにちは") {
-        cout << "こんにちはなんだぜ!" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku2;
-    }
-    else if (word == "こんばんは") {
-        cout << "こんばんはなんだぜ!" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku2;
-    }
-    else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
-        exit(0);
-    }
-    else {
-        std::cin.clear();
-        std::cin.ignore(268435456, '\n');
-        exit(0);
+    while (true) {
+        cout << ":";
+        //std::cin >> std::setw(256) >> word;
+        std::getline(std::cin, word);
+        if (word == "おはよう") {
+            cout << "やぁ、おはよう！" << endl;
+        }
+        else if (word == "こんにちは") {
+            cout << "こんにちはなんだぜ!" << endl;
+        }
+        else if (word == "こんばんは") {
+            cout << "こんばんはなんだぜ!" << endl;
+        }
+        else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            exit(0);
+        }
+        else if (word.size() > 0) {
+            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
+            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            std::cin.clear();
+            std::cin.ignore(268435456, '\n');
+            exit(0);
+        }
     }
     return 0;
 }
@@ -159,33 +171,33 @@ int marisa()//自作関数
 int youmu()//自作関数
 {
     std::srand((unsigned)time(NULL));
-nyuroku3:
-    char word[256];
-    i = rand() % 2 + 1;
-    cout << ":";
-    std::cin >> std::setw(256) >> word;
-    if (word == "おはよう") {
-        cout << "おはみょん！" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku3;
-    }
-    else if (word == "こんにちは") {
-        cout << "こんにちみょん！" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku3;
-    }
-    else if (word == "こんばんは") {
-        cout << "こんばんみょん！" << endl;
-        std::cin.ignore(268435456, '\n');
-        goto nyuroku3;
-    }
-    else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
-        exit(0);
-    }
-    else {
-        std::cin.clear();
-        std::cin.ignore(268435456, '\n');
-        exit(-1);               //失敗したので-1
+    while (true) {
+        i = rand() % 2 + 1;
+        cout << ":";
+        //std::cin >> std::setw(256) >> word;
+        std::getline(std::cin, word);
+        if (word == "おはよう") {
+            cout << "おはみょん！" << endl;
+            std::cin.ignore(268435456, '\n');
+        }
+        else if (word == "こんにちは") {
+            cout << "こんにちみょん！" << endl;
+            std::cin.ignore(268435456, '\n');
+        }
+        else if (word == "こんばんは") {
+            cout << "こんばんみょん！" << endl;
+            std::cin.ignore(268435456, '\n');
+        }
+        else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            exit(0);
+        }
+        else if (word.size() > 0) {
+            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
+            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            std::cin.clear();
+            std::cin.ignore(268435456, '\n');
+            exit(0);
+        }
     }
     return 0;
 }
