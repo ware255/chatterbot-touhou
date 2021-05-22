@@ -22,12 +22,10 @@ std::string word;
 
 inline void clear()//自作関数 clearする時に使う。
 {
-    cout << "\x1b[2J\x1b[3J\x1b[H" << endl;//clearするための特殊文字
+    system("cls");//Windowsは特殊文字が使われないのでsystem関数を使うしかない。
     /*
-
-    ↑の特殊文字が使えない場合には以下のプログラムに書き換えをしてください。。
-    system("cls");      <- Windowsの場合
-    system("clear");    <- Linuxの場合
+    Linuxは以下の特殊文字を使ってください。
+    cout << "\x1b[2J\x1b[3J\x1b[H" << endl;<- Linuxの場合
     */
     return;     //void なので戻り値はない。
 }
@@ -247,13 +245,18 @@ int main(int argc, char** argv)//main関数
         cout << "3 - 魂魄妖夢(みょん)風\n\n" << endl;
         cout << "選択:";    //endlがないことに注意
         try {
-            std::cin >> namber;      // cinは入力関数で、変数がint型なので数字を入力する。(charならば、文字でも可)
+            std::getline(std::cin, word);
+            namber = std::stoi(word);
+            //std::cin >> namber;      // cinは入力関数で、変数がint型なので数字を入力する。(charならば、文字でも可)
         }
-        catch (...) {
+        catch (...) {//int型の最大値より大きくなるとcin.ignoreで破棄!
+            std::cout << "エラーだお！" << std::endl;
             std::cin.clear();
             std::cin.ignore(268435456, '\n');
+            exit(-1);
         }
-        if (namber == 1) {
+        switch (namber) {
+        case 1:
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "私、霊夢って言うの。" << endl;
             {
@@ -264,8 +267,8 @@ int main(int argc, char** argv)//main関数
                 save << "1";    // saveというファイルに1を出力
             }
             std::cin.get();      //getchar()に似てる文。
-        }
-        else if (namber == 2) {
+            break;
+        case 2:
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "魔理沙だぜ！" << endl;
             {
@@ -276,8 +279,8 @@ int main(int argc, char** argv)//main関数
                 save << "2";    // saveというファイルに2を出力
             }
             std::cin.get();      //getchar()に似てる文。
-        }
-        else if (namber == 3) {
+            break;
+        case 3:
             clear();    //clear関数を呼び出してコンソール画面をクリア
             cout << "みょん！" << endl;
             {
@@ -288,11 +291,11 @@ int main(int argc, char** argv)//main関数
                 save << "3";    // saveというファイルに3を出力
             }
             std::cin.get();      //getchar()に似てる文。
-        }
-        else if (!std::cin.bad()) {
-            std::cin.clear();    //clear関数を呼び出していないことに注意。別の意味です。
-            std::cin.ignore(268435456, '\n');
-            exit(0);
+            break;
+        default:
+            std::cout << "エラーだお！" << std::endl;
+            std::cin.get();
+            break;
         }
     }
     else if (strcmp(argv[1], "--help") == 0) {
