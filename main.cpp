@@ -38,9 +38,9 @@ int hakurei()//自作関数
 {
     std::srand((unsigned)time(NULL));
     while (true) {
-        int i = rand() % 3 + 1;
+        i = rand() % 3 + 1;
         int yuti;
-        std::cout << ":";
+        cout << ":";
         //std::cin >> std::setw(256) >> word;
         std::getline(std::cin, word);
         if (word == "おはよう") {
