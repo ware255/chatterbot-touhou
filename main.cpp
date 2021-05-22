@@ -25,8 +25,7 @@ int i;
 
 void clear()//自作関数 clearする時に使う。
 {
-    cout << "\x1b[2J";          //clearするための特殊文字
-    cout << "\x1b[8A" << endl;
+    cout << "\x1b[2J\x1b[3J\x1b[H" << endl;//clearするための特殊文字
     /*
     
     ↑の特殊文字が使えない場合には以下のプログラムに書き換えをしてください。。
