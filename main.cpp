@@ -36,58 +36,51 @@ int hakurei()//自作関数
 {
     std::srand((unsigned)time(NULL));
     while (true) {
-        i = rand() % 3 + 1;
-        int yuti;
         cout << ":";
         //std::cin >> std::setw(256) >> word;
         std::getline(std::cin, word);
         if (word == "おはよう") {
-            for (yuti = 0; yuti < 1; ++yuti) {
-                switch (i) {
-                case 1:
-                    cout << "おはよ" << endl;
-                    //std::cin.ignore(268435456, '\n');
-                    break;
-                case 2:
-                    cout << "。。。" << endl;
-                    break;
-                case 3:
-                    cout << "そんなこと行ってる暇があったら掃除でもしたら？" << endl;
-                    break;
-                default:
-                    break;
-                }
+            switch (rand() % 3 + 1) {
+            case 1:
+                cout << "おはよ" << endl;
+                //std::cin.ignore(268435456, '\n');
+                break;
+            case 2:
+                cout << "。。。" << endl;
+                break;
+            case 3:
+                cout << "そんなこと行ってる暇があったら掃除でもしたら？" << endl;
+                break;
+            default:
+                break;
             }
         }
         else if (word == "こんにちは") {
-            for (yuti = 0; yuti < 1; ++yuti) {
-                switch (i) {
-                case 1:
-                    cout << "こんにちはー" << endl;
-                    break;
-                case 2:
-                    cout << "。。。" << endl;
-                    break;
-                default:
-                    break;
-                }
+            switch (rand() % 2 + 1) {
+            case 1:
+                cout << "こんにちはー" << endl;
+                break;
+            case 2:
+                cout << "。。。" << endl;
+                break;
+            default:
+                break;
             }
         }
         else if (word == "こんばんは") {
-            for (yuti = 0; yuti < 1; ++yuti) {
-                switch (i) {
-                case 1:
-                    cout << "こんばんはー" << endl;
-                    break;
-                case 2:
-                    cout << "。。。" << endl;
-                    break;
-                default:
-                    break;
-                }
+            switch (rand() % 2 + 1) {
+            case 1:
+                cout << "こんばんはー" << endl;
+                break;
+            case 2:
+                cout << "。。。" << endl;
+                break;
+            default:
+                break;
             }
         }
         else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            cout << "またね。" << endl;
             exit(0);
         }
         else if (word.size() > 0) {
@@ -135,6 +128,7 @@ int kirisame()//自作関数
             cout << "こんばんはなんだぜ!" << endl;
         }
         else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            cout << "またな！" << endl;
             exit(0);
         }
         else if (word.size() > 0) {
@@ -176,17 +170,15 @@ int youmu()//自作関数
         std::getline(std::cin, word);
         if (word == "おはよう") {
             cout << "おはみょん！" << endl;
-            std::cin.ignore(268435456, '\n');
         }
         else if (word == "こんにちは") {
             cout << "こんにちみょん！" << endl;
-            std::cin.ignore(268435456, '\n');
         }
         else if (word == "こんばんは") {
             cout << "こんばんみょん！" << endl;
-            std::cin.ignore(268435456, '\n');
         }
         else if (word == "exit" || word == "ばいばい") { //if文の中にある|は、もしどっちか一つの出来たら以下の文を実行という意味
+            cout << "ばいばいみょん！" << endl;
             exit(0);
         }
         else if (word.size() > 0) {
