@@ -84,8 +84,8 @@ int hakurei()//自作関数
             exit(0);
         }
         else if (word.size() > 0) {
-            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
-            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            cout << "製作者です。タイプミスしないでください。" << endl;
+            cout << "タイプミスすると終了する設計になっているので終了します。" << endl;
             std::cin.clear();
             std::cin.ignore(268435456, '\n');
             exit(0);
@@ -132,8 +132,8 @@ int kirisame()//自作関数
             exit(0);
         }
         else if (word.size() > 0) {
-            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
-            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            cout << "製作者です。タイプミスしないでください。" << endl;
+            cout << "タイプミスすると終了する設計になっているので終了します。" << endl;
             std::cin.clear();
             std::cin.ignore(268435456, '\n');
             exit(0);
@@ -182,8 +182,8 @@ int youmu()//自作関数
             exit(0);
         }
         else if (word.size() > 0) {
-            std::cout << "製作者です。タイプミスしないでください。" << std::endl;
-            std::cout << "タイプミスすると終了する設計になっているので終了します。" << std::endl;
+            cout << "製作者です。タイプミスしないでください。" << endl;
+            cout << "タイプミスすると終了する設計になっているので終了します。" << endl;
             std::cin.clear();
             std::cin.ignore(268435456, '\n');
             exit(0);
@@ -242,7 +242,7 @@ int main(int argc, char** argv)//main関数
             //std::cin >> namber;      // cinは入力関数で、変数がint型なので数字を入力する。(charならば、文字でも可)
         }
         catch (...) {//int型の最大値より大きくなるとcin.ignoreで破棄!
-            std::cout << "エラーだお！" << std::endl;
+            cout << "エラーだお！" << endl;
             std::cin.clear();
             std::cin.ignore(268435456, '\n');
             exit(-1);
