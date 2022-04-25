@@ -291,7 +291,7 @@ int main(int argc, char** argv)//main関数
         }
     }
     else if (strcmp(argv[1], "--help") == 0) {
-        cout << "このプログラムは、主(ware255)が自己満足のために作ったプログラムです。\n" << endl;
+        //cout << "このプログラムは、主(ware255)が自己満足のために作ったプログラムです。\n" << endl;
         cout << "コマンドラインで使いたい時に使う引数" << endl;
         cout << "例 ~$ 人工無能 [オプション]\n" << endl;
         cout << "人工無能 --help    :ヘルプ" << endl;
